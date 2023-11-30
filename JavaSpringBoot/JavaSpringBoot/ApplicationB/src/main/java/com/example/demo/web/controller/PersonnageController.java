@@ -22,7 +22,7 @@ public class PersonnageController {
 
     @GetMapping(value = "/random")
     public Personnage getRandomPersonnage() {
-        String url = "http://localhost:8081/Personnage";
+        String url = "http://localhost:8081/Personnages";
         RestTemplate restTemplate = new RestTemplate();
         Personnage[] personnages = restTemplate.getForObject(url, Personnage[].class);
         int randIndex = getRandomBetween(0, personnages.length - 1);
@@ -31,7 +31,7 @@ public class PersonnageController {
 
     @PostMapping(value = "/random")
     public Personnage createRandomPersonnage() {
-        String url = "http://localhost:8081/Personnage";
+        String url = "http://localhost:8081/Personnages";
         RestTemplate restTemplate = new RestTemplate();
         Personnage[] Personnages = restTemplate.getForObject(url, Personnage[].class);
 
